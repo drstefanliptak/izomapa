@@ -79,7 +79,7 @@ def ihash(*a):
 
 def load(name):
     t = pq.read_table(f'{DATA}/{name}.parquet').to_pandas()
-    t = t.sort_values('id', kind='stable').reset_index(drop=True)   # pořadí ze S3 není zaručené
+    t = t.sort_values('id', kind='stable').reset_index(drop=True)
     t['geom'] = t.geometry.map(lambda g: transform(lambda x, y, z=None: to_local(x, y), shapely.from_wkb(g)))
     return t
 
@@ -627,8 +627,8 @@ for l, w, c, n in drive_lines:
 # ---------------- budovy ----------------
 bld = load('building')
 # jen budovy z OpenStreetMap: samotné odhady Microsoft ML Buildings jsou hlavně kůlny a garáže, často posunuté nebo zdvojené
-bld = bld[bld.sources.map(lambda s: s is not None and any(x['dataset'] == 'OpenStreetMap' for x in s))].reset_index(drop=True)
-for i, r in bld.iterrows():                             # výšky z upřesnění mají přednost před daty
+bld = bld[bld.sources.map(lambda s: s is not None and any(x['dataset'] == 'OpenStreetMap' for x in s)).astype(bool)].reset_index(drop=True)
+for i, r in bld.iterrows():  # výšky z upřesnění mají přednost před daty
     if 'h' in UP['b'].get(r.id, {}): bld.at[i, 'height'] = UP['b'][r.id]['h']
 if len(bld) and UP['roofs']:                            # přístřešky nástupišť (nejsou v OSM jako budovy)
     t0 = bld.iloc[0]; rows = []
@@ -715,7 +715,7 @@ def roof_parts(p, ang):
 
 
 addr = load('address')
-addr = addr[addr.geom.map(lambda g: EXT_P.contains(g))]
+addr = addr[addr.geom.map(lambda g: EXT_P.contains(g)).astype(bool)]
 addr_pts = list(addr.geom)
 addr_tree = shapely.STRtree(addr_pts)
 addr_txt = [f"{s} {n}" if isinstance(s, str) else str(n) for s, n in zip(addr.street, addr.number)]

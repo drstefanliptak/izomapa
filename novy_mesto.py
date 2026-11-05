@@ -16,7 +16,7 @@ args = sys.argv[1:]
 if not args or args[0].startswith('-'): sys.exit(__doc__)
 NAZEV = args[0]
 opt = lambda k, d=None: args[args.index(k) + 1] if k in args else d
-DOTAZ = opt('--dotaz', f'{NAZEV}, Česko')
+DOTAZ = opt('--dotaz', f'{NAZEV}, Slovensko')
 MAX = int(opt('--max', 0))
 HALF = 1150.0
 UA = {'User-Agent': 'izomapa/1.0 (https://github.com/adamklatovsky/izomapa)'}
@@ -27,7 +27,7 @@ def get(url):
 
 
 # 1) hranice obce
-q = urllib.parse.urlencode({'q': DOTAZ, 'format': 'json', 'polygon_geojson': 1, 'limit': 8, 'countrycodes': 'cz'})
+q = urllib.parse.urlencode({'q': DOTAZ, 'format': 'json', 'polygon_geojson': 1, 'limit': 8, 'countrycodes': 'sk'})
 res = json.loads(get('https://nominatim.openstreetmap.org/search?' + q))
 res = [r for r in res if r.get('geojson', {}).get('type') in ('Polygon', 'MultiPolygon')]
 if not res: sys.exit(f'Hranici „{DOTAZ}“ jsem nenašel. Zkus --dotaz s přesnějším názvem obce.')

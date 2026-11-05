@@ -25,6 +25,7 @@ const port = server.address().port;
 // cloud (Linux bez GPU): předinstalovaný Chromium + SwiftShader; Mac: Chromium z Playwrightu + GPU (Metal)
 const LINUX_CHROME = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 const browser = await chromium.launch({
+      ...(process.platform === 'win32' ? { executablePath: path.join(process.env.TEMP, 'chromium-test', 'chrome-win', 'chrome.exe') } : {}),
   ...(fs.existsSync(LINUX_CHROME) ? { executablePath: LINUX_CHROME } : {}),
   args: process.platform === 'darwin'
     ? ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist']
