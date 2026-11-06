@@ -42,12 +42,12 @@ og = f'''<meta property="og:image" content="{SITE_URL}/og.jpg">
 <meta name="twitter:image" content="{SITE_URL}/og.jpg">
 ''' if SITE_URL else ''
 LD = json.dumps({'@context': 'https://schema.org', '@type': 'WebApplication', 'name': M['titulek'], 'description': M['popis'],
-                 'inLanguage': 'cs', 'applicationCategory': 'TravelApplication', 'operatingSystem': 'Web',
+                 'inLanguage': 'sk', 'applicationCategory': 'TravelApplication', 'operatingSystem': 'Web',
                  'spatialCoverage': {'@type': 'Place', 'name': M['nazev']},
                  'isBasedOn': ['https://www.openstreetmap.org/', 'https://overturemaps.org/', 'https://geoportal.cuzk.cz/']},
                 ensure_ascii=False)
 head = f'''<!doctype html>
-<html lang="cs">
+<html lang="sk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -55,7 +55,7 @@ head = f'''<!doctype html>
 <meta property="og:description" content="{E(M['popis'])}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{E(M['titulek'])}">
-<meta property="og:locale" content="cs_CZ">
+<meta property="og:locale" content="sk_SK">
 {og}<script type="application/ld+json">{LD}</script>
 <style>:root{{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}}body{{margin:0;font:14px system-ui}}[hidden]{{display:none!important}}</style>
 '''

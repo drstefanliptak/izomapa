@@ -1,18 +1,23 @@
 <!doctype html>
-<html lang="cs">
+<html lang="sk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta property="og:title" content="Izometrické Čifáre">
-<meta property="og:description" content="Izometrická pixel-art mapa: Čifáre ve stylu SimCity 2000. Roční období, den a noc, počasí a příběhy míst.">
+<meta property="og:title" content="Čifáre – digitálna 3D pohľadnica">
+<meta property="og:description" content="Digitálna 3D pohľadnica obce Čifáre na Slovensku. Izometrická pixel-art mapa zachytáva obec, jej ulice, budovy a okolitú krajinu.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Izometrické Čifáre">
-<meta property="og:locale" content="cs_CZ">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Izometrické Čifáre", "description": "Izometrická pixel-art mapa: Čifáre ve stylu SimCity 2000. Roční období, den a noc, počasí a příběhy míst.", "inLanguage": "cs", "applicationCategory": "TravelApplication", "operatingSystem": "Web", "spatialCoverage": {"@type": "Place", "name": "Čifáre"}, "isBasedOn": ["https://www.openstreetmap.org/", "https://overturemaps.org/", "https://geoportal.cuzk.cz/"]}</script>
+<meta property="og:site_name" content="Čifáre – digitálna 3D pohľadnica">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:image" content="https://drstefanliptak.github.io/izomapa/og.jpg">
+<meta property="og:url" content="https://drstefanliptak.github.io/izomapa/">
+<link rel="canonical" href="https://drstefanliptak.github.io/izomapa/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://drstefanliptak.github.io/izomapa/og.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Čifáre – digitálna 3D pohľadnica", "description": "Digitálna 3D pohľadnica obce Čifáre na Slovensku. Izometrická pixel-art mapa zachytáva obec, jej ulice, budovy a okolitú krajinu.", "inLanguage": "sk", "applicationCategory": "TravelApplication", "operatingSystem": "Web", "spatialCoverage": {"@type": "Place", "name": "Čifáre"}, "isBasedOn": ["https://www.openstreetmap.org/", "https://overturemaps.org/", "https://geoportal.cuzk.cz/"]}</script>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui}[hidden]{display:none!important}</style>
-<title>Izometrické Čifáre</title>
+<title>Čifáre – digitálna 3D pohľadnica</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Izometrická pixel-art mapa: Čifáre ve stylu SimCity 2000. Roční období, den a noc, počasí a příběhy míst.">
+<meta name="description" content="Digitálna 3D pohľadnica obce Čifáre na Slovensku. Izometrická pixel-art mapa zachytáva obec, jej ulice, budovy a okolitú krajinu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
 <style>
@@ -231,8 +236,8 @@ dialog.help ol.vd-list { margin: 0; padding-left: 22px; } ol.vd-list li { margin
 <aside class="panel" id="panel">
   <div class="head">
     <div>
-      <h1>Izometrické <span>Čifáre</span></h1>
-      <p class="sub" id="sub">Čifáre z otevřených dat, ve stylu SimCity 2000.</p>
+      <h1>Čifáre z vtáčej <span>perspektívy</span></h1>
+      <p class="sub" id="sub">Objavte Čifáre z netradičnej perspektívy. Izometrická mapa obce a okolitej krajiny.</p>
     </div>
     <div class="head-btns">
       <button class="px-btn help-btn" id="help" type="button" aria-label="Nápověda a o projektu" title="Nápověda a o projektu">?</button>
@@ -298,8 +303,9 @@ dialog.help ol.vd-list { margin: 0; padding-left: 22px; } ol.vd-list li { margin
 
   <details class="about">
     <summary>O projektu</summary>
-    <p>Mapa vznikla nástrojem <a href="https://github.com/adamklatovsky/izomapa" target="_blank" rel="noopener">izomapa</a> z otevřených dat. Budovy, adresy, silnice, voda a zeleň pochází z Overture Maps (OpenStreetMap), terén z modelu Terrarium, výšky budov, les a pole z dat ČÚZK. Lampy podél ulic, zaparkovaná auta, popelnice, hroby a část stromů v zahradách jsou doplněné podle typu území, nejde o přesné polohy.</p>
-    <p><strong>Co je izometrie?</strong><br>Pohled shora a šikmo bez perspektivy: čáry se do dálky nesbíhají a věci si drží svou skutečnou velikost bez ohledu na to, jak daleko jsou od pozorovatele. Dům na kraji mapy je stejně velký jako ten uprostřed. Tenhle styl si pamatuje každý, kdo koncem 90. let trávil hodiny u SimCity a podobných budovatelských her.</p>
+<p><strong>Autor digitálnej prezentácie:</strong> Štefan Lipták.</p>
+    <p>Mapa obce Čifáre vznikla pomocou nástroja <a href="https://github.com/adamklatovsky/izomapa" target="_blank" rel="noopener">izomapa</a> a využíva otvorené geografické dáta. Budovy, adresy, cesty, vodné plochy a zeleň pochádzajú z otvorených geografických dát Overture Maps a OpenStreetMap. Terén a výškové údaje vychádzajú z použitých digitálnych modelov krajiny. Pouličné lampy, zaparkované autá, odpadkové koše, hroby a časť stromov v záhradách sú doplnené ilustračne podľa charakteru územia – nejde o ich presné geografické polohy.</p>
+    <p><strong>Čo je izometrické zobrazenie?</strong><br>Je to pohľad zhora a zároveň zboku, bez klasickej perspektívy. Čiary sa smerom do diaľky nezbiehajú a objekty si zachovávajú rovnakú mierku bez ohľadu na vzdialenosť od pozorovateľa. Dom na okraji mapy je preto rovnako veľký ako dom v jej strede. Tento grafický štýl si určite pamätajú všetci, ktorí koncom 90. rokov trávili hodiny pri hrách SimCity a ďalších budovateľských stratégiách.</p>
   </details>
 </aside>
 
@@ -335,7 +341,7 @@ dialog.help ol.vd-list { margin: 0; padding-left: 22px; } ol.vd-list li { margin
 <dialog class="help" id="helpDlg" aria-labelledby="helpTitle">
   <button class="px-btn close" id="helpClose" type="button" aria-label="Zavřít">×</button>
   <h2 id="helpTitle">O mapě</h2>
-  <p>Izometrická pixel-art mapa: Čifáre ve stylu SimCity 2000. Roční období, den a noc, počasí a příběhy míst.</p>
+  <p>Digitálna 3D pohľadnica obce Čifáre na Slovensku. Izometrická pixel-art mapa zachytáva obec, jej ulice, budovy a okolitú krajinu.</p>
   <h3>Ovládání</h3>
   <ul>
     <li><b>Posun a přiblížení:</b> tažení myší nebo prstem, kolečko nebo dva prsty. Dvojklik přiblíží.</li>
